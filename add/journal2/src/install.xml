@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is subject to the terms and conditions defined in the "EULA.txt"
+file that is part of this source code package and is also available on the
+page: https://raw.githubusercontent.com/ocmod-space/license/main/EULA.txt.
+-->
+
+<modification>
+	<name>#ocmod.space | Price Range | Journal 2</name>
+	<code>price-range--journal2</code>
+	<version>1.0.0</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://www.opencart.com/index.php?route=marketplace/extension&amp;filter_member=ocmod.space</link>
+
+	<file path="admin/controller/extension/module/price_range.php" error="log">
+		<operation error="log">
+			<search info="">
+				<![CDATA[$this->{$model}->addEvent('price_range', 'catalog/view/extension/module/*/before', 'extension/module/price_range/showPriceRange');]]>
+			</search>
+			<add position="after">
+				<![CDATA[			$this->{$model}->addEvent('price_range', ''catalog/view/journal2/module/*/before', 'extension/module/price_range/showPriceRange');]]>
+			</add>
+		</operation>
+	</file>
+</modification>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is part of "Price Range eMarket" project and subject to the terms
+and conditions defined in file "LICENSE.txt", which is part of this source
+code package and also available on the project page: https://git.io/Jf9ZV.
+-->
+
+
+<modification>
+	<name>#ocmod.space | Price Range | eMarket</name>
+	<code>price-range--emarket</code>
+	<version>1.1.0</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://git.io/Jf9ZV</link>
+
+	<file path="catalog/controller/extension/module/{so_category_slider,so_deals,so_listing_tabs,so_super_category}.php" error="log">
+		<operation error="log">
+			<search><![CDATA[$cat['child'][]]]></search>
+			<add position="before"><![CDATA[
+				if ($this->config->get('module_price_range_status')) {
+					$this->load->model('extension/module/price_range');
+
+					price_range_settings = $this->model_extension_module_price_range->settings();
+
+					if (price_range_settings['status']) {
+						$product_options = $this->model_catalog_product->getProductOptions($data['product_id']);
+						$config_tax = $this->config->get('config_tax');
+
+						if ($config_tax) {
+							$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+
+							$price_range = array(
+								'min' => $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax),
+								'max' => $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax),
+							);
+
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special_range['min'] = $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax);
+								$special_range['max'] = $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+
+							$tax = $this->model_extension_module_price_range->format($extax_range);
+						} else {
+							$price_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$special_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+						}
+					}
+				}
+			]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/extension/module/{so_category_slider,so_deals}.php" error="log">
+		<operation error="log">
+			<search><![CDATA[$data['product_features'][]]]></search>
+			<add position="before"><![CDATA[
+				if ($this->config->get('module_price_range_status')) {
+					$this->load->model('extension/module/price_range');
+
+					price_range_settings = $this->model_extension_module_price_range->settings();
+
+					if (price_range_settings['status']) {
+						$product_options = $this->model_catalog_product->getProductOptions($data['product_id']);
+						$config_tax = $this->config->get('config_tax');
+
+						if ($config_tax) {
+							$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+
+							$price_range = array(
+								'min' => $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax),
+								'max' => $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax),
+							);
+
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special_range['min'] = $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax);
+								$special_range['max'] = $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+
+							$tax = $this->model_extension_module_price_range->format($extax_range);
+						} else {
+							$price_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$special_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+						}
+					}
+				}
+			]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/extension/module/{so_basic_products,so_extra_slider,so_filter_shop_by,so_quick_view}.php" error="log">
+		<operation error="log">
+			<search><![CDATA[$data['products'][]]]></search>
+			<add position="before"><![CDATA[
+				if ($this->config->get('module_price_range_status')) {
+					$this->load->model('extension/module/price_range');
+
+					price_range_settings = $this->model_extension_module_price_range->settings();
+
+					if (price_range_settings['status']) {
+						$product_options = $this->model_catalog_product->getProductOptions($data['product_id']);
+						$config_tax = $this->config->get('config_tax');
+
+						if ($config_tax) {
+							$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+
+							$price_range = array(
+								'min' => $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax),
+								'max' => $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax),
+							);
+
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special_range['min'] = $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax);
+								$special_range['max'] = $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+
+							$tax = $this->model_extension_module_price_range->format($extax_range);
+						} else {
+							$price_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$special_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+						}
+					}
+				}
+			]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/extension/module/{so_category_slider,so_deals,so_listing_tabs,so_super_category}.php" error="log">
+		<operation error="log">
+			<search><![CDATA[$cat['child'][]]]></search>
+			<add position="before"><![CDATA[
+				if ($this->config->get('module_price_range_status')) {
+					$this->load->model('extension/module/price_range');
+
+					price_range_settings = $this->model_extension_module_price_range->settings();
+
+					if (price_range_settings['status']) {
+						$product_options = $this->model_catalog_product->getProductOptions($data['product_id']);
+						$config_tax = $this->config->get('config_tax');
+
+						if ($config_tax) {
+							$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+
+							$price_range = array(
+								'min' => $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax),
+								'max' => $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax),
+							);
+
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$extax_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special_range['min'] = $this->tax->calculate($extax_range['min'], $product_info['tax_class_id'], $config_tax);
+								$special_range['max'] = $this->tax->calculate($extax_range['max'], $product_info['tax_class_id'], $config_tax);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+
+							$tax = $this->model_extension_module_price_range->format($extax_range);
+						} else {
+							$price_range = $this->model_extension_module_price_range->calculate((float)$product_info['price'], $product_options);
+							$price = $this->model_extension_module_price_range->format($price_range);
+
+							if ((float)$product_info['special']) {
+								$special_range = $this->model_extension_module_price_range->calculate((float)$product_info['special'], $product_options);
+
+								$special = $this->model_extension_module_price_range->format($special_range);
+							}
+						}
+					}
+				}
+			]]>
+			</add>
+		</operation>
+	</file>
+
+	<!-- This fix does not related to the "Price Range" and was added just in case -->
+	<file path="catalog/controller/extension/module/{so_super_category}.php" error="log">
+		<operation error="log" info="url fix">
+			<search><![CDATA[$this->url->link('product/product', 'product_id=' . $product_info['product_id'])]]></search>
+			<add position="replace"><![CDATA[html_entity_decode($this->url->link('product/product', 'product_id=' . $product_info['product_id']))]]>
+			</add>
+		</operation>
+	</file>
+
+</modification>

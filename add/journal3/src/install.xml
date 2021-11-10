@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+This file is subject to the terms and conditions defined in the "EULA.txt"
+file that is part of this source code package and is also available on the
+page: https://raw.githubusercontent.com/ocmod-space/license/main/EULA.txt.
+-->
+
+<modification>
+	<name>#ocmod.space | Price Range | Journal3</name>
+	<code>price-range--journal3</code>
+	<version>1.3.0</version>
+	<author>Andrii Burkatskyi aka underr</author>
+	<link>https://www.opencart.com/index.php?route=marketplace/extension&amp;filter_member=ocmod.space</link>
+
+	<file path="admin/controller/extension/module/price_range.php" error="log">
+		<operation error="log">
+			<search info="192">
+				<![CDATA[$event = $this->name . '_catalog';]]>
+			</search>
+			<add position="after">
+				<![CDATA[		/// << Journal3
+		$trigger = 'catalog/view/journal3/*/before';
+		$action = $this->route . '/beforeViewExtensionModule';
+		$this->{$event_class}->addEvent($event, $trigger, $action);
+		/// >> Journal3]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/journal3/search.php" error="log" info="ajax-search">
+		<operation error="log">
+			<search info="">
+				<![CDATA[public function index() {]]>
+			</search>
+			<add position="after">
+				<![CDATA[		/// << Price Range
+		if ($this->config->get('module_price_range_status')) {
+			$this->load->model('extension/module/price_range');
+
+			$price_range_settings = $this->model_extension_module_price_range->settings();
+
+			if ($price_range_settings['status']) {
+				$prstatus = true;
+
+				$this->load->model('catalog/product');
+			} else {
+				$prstatus = false;
+			}
+		}
+		/// >> Price Range]]>
+			</add>
+		</operation>
+		<operation error="log">
+			<search info="">
+				<![CDATA[$special = $this->currency->format]]>
+			</search>
+			<add position="after">
+				<![CDATA[					/// << Price Range
+				}
+			}
+			if ($prstatus) {
+				$price_range = array();
+
+				$config_tax = $this->config->get('config_tax');
+
+				$result_options = $this->model_catalog_product->getProductOptions($result['product_id']);
+
+				if ($config_tax) {
+					$extax_range = $this->model_extension_module_price_range->calculate($result['price'], $result_options);
+
+					$price_range = array(
+						'min' => $this->tax->calculate($extax_range['min'], $result['tax_class_id'], $config_tax),
+						'max' => $this->tax->calculate($extax_range['max'], $result['tax_class_id'], $config_tax)
+					);
+
+					$price = $this->model_extension_module_price_range->format($price_range);
+
+					if ((float)$result['special']) {
+						$extax_range = $this->model_extension_module_price_range->calculate($result['special'], $result_options);
+
+						$special_range = array(
+							'min' => $this->tax->calculate($extax_range['min'], $result['tax_class_id'], $config_tax),
+							'max' => $this->tax->calculate($extax_range['max'], $result['tax_class_id'], $config_tax)
+						);
+
+						$product['special'] = $this->model_extension_module_price_range->format($special_range);
+					}
+
+					$product['tax'] = $this->model_extension_module_price_range->format($extax_range);
+				} else {
+					$price_range = $this->model_extension_module_price_range->calculate($result['price'], $result_options);
+					$price = $this->model_extension_module_price_range->format($price_range);
+
+					if ((float)$result['special']) {
+						$special_range = $this->model_extension_module_price_range->calculate($result['special'], $result_options);
+
+						$product['special'] = $this->model_extension_module_price_range->format($special_range);
+					}
+					/// >> Price Range]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/extension/module/price_range.php" error="log">
+		<operation error="log">
+			<search info="63">
+				<![CDATA[if ($settings['status']) {]]>
+			</search>
+			<add position="after">
+				<![CDATA[
+			/// << Journal3
+			if (strpos($route, 'journal3') === 0 && isset($data['items'])) {
+
+				foreach ($data['items'] as &$item) {
+					if (isset($item['products']) && is_array($item['products'])) {
+						foreach ($item['products'] as &$product) {
+							if (isset($product['product_id']) && $product['product_id']) {
+								$price_range = $this->getProductPriceRange($product['product_id']);
+
+								if (isset($product['price'], $price_range['price'])) {
+									$product['price'] = $price_range['price'];
+								}
+
+								if (isset($product['tax'], $price_range['tax']) && $product['tax']) {
+									$product['tax'] = $price_range['tax'];
+								}
+
+								if (isset($product['special'], $price_range['special'])) {
+									$product['special'] = $price_range['special'];
+								}
+
+								if (isset($product['discounts'], $price_range['discounts'])) {
+									$product['discounts'] = $price_range['discounts'];
+								}
+							} else {
+								$this->log->write('[Price Range] ERROR: No `product_id`');
+								$this->log->write($product);
+							}
+						}
+					}
+				}
+			}
+			/// >> Journal 3]]>
+			</add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/journal3/price.php" error="log">
+		<operation error="log">
+			<search info="">
+				<![CDATA[$this->renderJson('success', $data);]]>
+			</search>
+			<add position="before">
+				<![CDATA[
+			/// <<< Price Range
+			if ($this->config->get('module_price_range_status') && !$product_option_values ) {
+				exit;
+			}
+			/// Price Range >>>]]>
+			</add>
+		</operation>
+	</file>
+
+</modification>
