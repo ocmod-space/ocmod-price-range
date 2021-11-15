@@ -50,16 +50,16 @@ pwd:
 		hideg; \
 	fi
 
-# decrypt and unpack .fcl.g-file
-dec: pwd
+# extract files from encrypted fcl-file
+extr: pwd
 	@if [ -f "$(pwd_file)" -a -f "$(arc_dir)/$(mod_name).fcl.g" ]; then \
 		hideg "$(arc_dir)/$(mod_name).fcl.g"; \
 		fcl extr -f "$(arc_dir)/$(mod_name).fcl"; \
 		rm -f "$(arc_dir)/$(mod_name).fcl"; \
 	fi
 
-# show file list into .fcl.g-file
-cat: pwd
+# list files into encrypted fcl-file
+list: pwd
 	@if [ -f "$(pwd_file)" -a -f "$(arc_dir)/$(mod_name).fcl.g" ]; then \
 		hideg "$(arc_dir)/$(mod_name).fcl.g"; \
 		fcl list "$(arc_dir)/$(mod_name).fcl"; \
