@@ -7,13 +7,13 @@ The extension is compatible with OpenCart versions 2.2.0.0-3.x.
 ## Features
 * Displaying product price range in one of the following three ways:
     - Price range ($100 - $150)
-    - At price (e.g., At $100).
-    - Up to price(Up to $150).
-* Supports multistore.
-* Does not modify system files.
-* Compatible with the Journal 3 template (see below).
-* Compatible with the [Equal Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34383) extension (see below).
-* Compatible with the [Live Product](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005) extension (see below).
+    - At price (e.g., At $100)
+    - Up to price(Up to $150)
+* Supports multistore
+* Does not modify system files
+* Compatible with the Journal 3 template (see below)
+* Compatible with the [Equal Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34383) extension (see below)
+* Compatible with the [Live Product](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=36005) extension (see below)
 
 ## Live demo
 * [Admin](http://ocmod.freevar.com/oc3020/b/admin/index.php?route=extension/module/price_range)
