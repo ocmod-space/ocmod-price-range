@@ -1,4 +1,4 @@
-# [Addon] Price Range | Journal 2
+# [Addon] Price Range > Journal 2
 
 ## Description
 An addon for linking the "Price Range" extension with the Journal 2 template.

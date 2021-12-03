@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-This file is subject to the terms and conditions defined in the "EULA.txt"
-file that is part of this source code package and is also available on the
-page: https://raw.githubusercontent.com/ocmod-space/license/main/EULA.txt.
+This file is subject to the terms and conditions defined in the "LICENSE.txt"
+file, which is available by the link:
+https://raw.githubusercontent.com/ocmod-space/readme/main/license/LICENSE.txt.
 -->
 
 <modification>
-	<name>#ocmod.space | Price Range | Out-Of-Stock</name>
+	<name>#ocmod.space | Price Range &lt; Out-Of-Stock</name>
 	<code>price-range--outofstock</code>
 	<version>1.0.0</version>
 	<author>Andrii Burkatskyi aka underr</author>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-This file is part of "Price Range eMarket" project and subject to the terms
-and conditions defined in file "LICENSE.txt", which is part of this source
-code package and also available on the project page: https://git.io/Jf9ZV.
+This file is subject to the terms and conditions defined in the "LICENSE.txt"
+file, which is available by the link:
+https://raw.githubusercontent.com/ocmod-space/readme/main/license/LICENSE.txt.
 -->
 
 
 <modification>
-	<name>#ocmod.space | Price Range | eMarket</name>
+	<name>#ocmod.space | Price Range > eMarket</name>
 	<code>price-range--emarket</code>
 	<version>1.1.0</version>
 	<author>Andrii Burkatskyi aka underr</author>
