@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/ocmod-space/readme/main/license/LICENSE.txt..
 			<add position="after">
 				<![CDATA[		/// << Journal3
 		$trigger = 'catalog/view/journal3/*/before';
-		$action = $this->route . '/beforeViewExtensionModule';
+		$action = $this->path . '/beforeViewExtensionModule';
 		$this->{$event_class}->addEvent($event, $trigger, $action);
 		/// >> Journal3]]>
 			</add>
@@ -56,46 +56,45 @@ https://raw.githubusercontent.com/ocmod-space/readme/main/license/LICENSE.txt..
 				<![CDATA[$special = $this->currency->format]]>
 			</search>
 			<add position="after">
-				<![CDATA[					/// << Price Range
+				<![CDATA[				/// << Price Range
 				}
-			}
-			if ($prstatus) {
-				$price_range = array();
 
-				$config_tax = $this->config->get('config_tax');
+				if ($prstatus) {
+					$price_range = array();
 
-				$result_options = $this->model_catalog_product->getProductOptions($result['product_id']);
+					$config_tax = $this->config->get('config_tax');
 
-				if ($config_tax) {
-					$extax_range = $this->model_extension_module_price_range->calculate($result['price'], $result_options);
+					$result_options = $this->model_catalog_product->getProductOptions($result['product_id']);
 
-					$price_range = array(
-						'min' => $this->tax->calculate($extax_range['min'], $result['tax_class_id'], $config_tax),
-						'max' => $this->tax->calculate($extax_range['max'], $result['tax_class_id'], $config_tax)
-					);
+					if ($config_tax) {
+						$extax_range = $this->model_extension_module_price_range->calculate($result['price'], $result_options);
 
-					$price = $this->model_extension_module_price_range->format($price_range);
-
-					if ((float)$result['special']) {
-						$extax_range = $this->model_extension_module_price_range->calculate($result['special'], $result_options);
-
-						$special_range = array(
+						$price_range = array(
 							'min' => $this->tax->calculate($extax_range['min'], $result['tax_class_id'], $config_tax),
 							'max' => $this->tax->calculate($extax_range['max'], $result['tax_class_id'], $config_tax)
 						);
 
-						$product['special'] = $this->model_extension_module_price_range->format($special_range);
-					}
+						$price = $this->model_extension_module_price_range->format($price_range);
 
-					$product['tax'] = $this->model_extension_module_price_range->format($extax_range);
-				} else {
-					$price_range = $this->model_extension_module_price_range->calculate($result['price'], $result_options);
-					$price = $this->model_extension_module_price_range->format($price_range);
+						if ($special) {
+							$extax_range = $this->model_extension_module_price_range->calculate($result['special'], $result_options);
 
-					if ((float)$result['special']) {
-						$special_range = $this->model_extension_module_price_range->calculate($result['special'], $result_options);
+							$special_range = array(
+								'min' => $this->tax->calculate($extax_range['min'], $result['tax_class_id'], $config_tax),
+								'max' => $this->tax->calculate($extax_range['max'], $result['tax_class_id'], $config_tax)
+							);
 
-						$product['special'] = $this->model_extension_module_price_range->format($special_range);
+							$special = $this->model_extension_module_price_range->format($special_range);
+						}
+					} else {
+						$price_range = $this->model_extension_module_price_range->calculate($result['price'], $result_options);
+						$price = $this->model_extension_module_price_range->format($price_range);
+
+						if ($special) {
+							$special_range = $this->model_extension_module_price_range->calculate($result['special'], $result_options);
+
+							$special = $this->model_extension_module_price_range->format($special_range);
+						}
 					}
 					/// >> Price Range]]>
 			</add>
