@@ -1,5 +1,9 @@
 # Change log
 
+## [1.6.1] - 2021.11.10:
+### Fixed
+- Settings
+
 ## [1.6.0] - 2021.11.10:
 ### Internal
 - Code refactoring
