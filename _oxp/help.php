@@ -1,7 +1,7 @@
 <?php
 
-out('Opencart Extension Maker v1.0.0');
-out('Using: php oemaker.php [-option]');
+out('OpenCart Extension Packer v0.3.0');
+out('Using: php xpakrun.php [-option]');
 out();
 out('Options:');
 out(' -z[N]' . "\t" . 'Zip extension files.');
