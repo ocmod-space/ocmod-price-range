@@ -120,9 +120,6 @@ function mkzip($srcdir, $zipfile, $force = false) {
             } elseif (is_dir($file)) {
                 $zip->addEmptyDir($relative);
             }
-
-            // PHP >= 8.0.0, PECL zip >= 1.16.0
-            // $zip->setMtimeName($file, strtotime('2023-01-01 00:00:00'));
         }
 
         try {
@@ -131,15 +128,18 @@ function mkzip($srcdir, $zipfile, $force = false) {
             error(' creating "' . $zipfile . '" error:' . "\n" . $e);
         }
 
-        $zip->open($zipfile);
+        // PHP >= 8.0.0, PECL zip >= 1.16.0
+        if (version_compare(PHP_VERSION, '8.0.0') >= 0) {
+            $zip->open($zipfile);
 
-        for ($i = 0; $i < $zip->numFiles; ++$i) {
-            $stat = $zip->statIndex($i);
+            for ($i = 0; $i < $zip->numFiles; ++$i) {
+                $stat = $zip->statIndex($i);
 
-            $zip->setMtimeIndex($i, strtotime('2023-01-01 00:00:01'));
+                $zip->setMtimeIndex($i, strtotime('2023-01-01 00:00:01'));
+            }
+
+            $zip->close();
         }
-
-        $zip->close();
     } else {
         error('can not create "' . $zipfile . '"!');
     }
