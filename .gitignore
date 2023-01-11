@@ -3,5 +3,5 @@ pic
 src
 zip
 *.bb
-*.code-workspace
 *.pwd
+pakdef.php
