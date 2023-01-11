@@ -1,12 +1,12 @@
 <?php
 
-// OXP - OpenCart Extension Packer v0.4.0
+// PAK - OpenCart Extension Packer v0.4.0
 
-require_once '_oxp/conf.php';
+require_once '_pak/conf.php';
 
-require_once '_oxp/func.php';
+require_once '_pak/func.php';
 
-require_once '_oxp/reqd.php';
+require_once '_pak/reqd.php';
 
 /*
 set_error_handler(function ($errno, $errstr, $errfile, $errline) {
@@ -23,7 +23,7 @@ $clo = get_clo();
 $basename = strtolower(basename(getcwd()));
 
 if (isset($clo[MAKEZIP]) && !is_false($clo[MAKEZIP])) {
-    require_once 'oxpdef.php';
+    require_once 'pakdef.php';
 
     $workdir = get_wd($clo[MAKEZIP]);
 
@@ -96,7 +96,7 @@ if (isset($clo[MAKEZIP]) && !is_false($clo[MAKEZIP])) {
         unlink($fcl_file);
     }
 } else {
-    include '_oxp/help.php';
+    include '_pak/help.php';
 
     out('Numbers:');
 

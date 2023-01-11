@@ -1,5 +1,7 @@
 <?php
 
+// internal functions
+
 function get_clo() {
     $o = '';
 

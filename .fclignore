@@ -1,7 +1,10 @@
 .git
 _fcl
-_oxp
+_pak
 zip
+.fclignore
 .gitignore
 hideg.pwd
-oxprun.php
+.php-cs-fixer.php_cs
+.price-range.code-workspace
+pakrun.php

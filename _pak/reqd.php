@@ -1,5 +1,7 @@
 <?php
 
+// check required tools and php modules
+
 if (!extension_loaded('zip')) {
     error('php-zip module not installed!');
 }
