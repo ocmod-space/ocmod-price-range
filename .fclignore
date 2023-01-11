@@ -4,7 +4,7 @@ _pak
 zip
 .fclignore
 .gitignore
-hideg.pwd
 .php-cs-fixer.php_cs
 .price-range.code-workspace
+hideg.pwd
 pakrun.php
