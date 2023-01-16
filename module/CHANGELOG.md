@@ -1,5 +1,9 @@
 # Change log
 
+## [1.6.3] - 2023.01.16:
+### Fixed
+- Minor fixes
+
 ## [1.6.2] - 2022.12.03:
 ### Fixed
 - Minimum price value if the last (or not first) checkbox options has no price
