@@ -22,10 +22,10 @@ Compatible with OpenCart versions 2.2.x-3.x.
 [OpenCart Marketplace](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=38331)
 
 ## Addons
-[Journal 3](https://github.com/ocmod-space/ocmod-price-range/raw/main/add/journal3/zip/price-range--journal3.ocmod.zip) theme addon.
-[Journal 2](https://github.com/ocmod-space/ocmod-price-range/raw/main/add/journal2/zip/price-range--journal2.ocmod.zip) addon.
-[Magentech](https://github.com/ocmod-space/ocmod-price-range/raw/main/add/magentech/zip/price-range--magentech.ocmod.zip]) theme addon.
-[Out-Of-Stock](https://github.com/ocmod-space/ocmod-price-range/raw/main/add/out-of-stock/zip/price-range--out-of-stock.ocmod.zip]) addon for calculating the price range taking into account options that are not available.
+[Journal 3](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/journal3/zip/price-range--journal3.ocmod.zip) theme addon.
+[Journal 2](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/journal2/zip/price-range--journal2.ocmod.zip) addon.
+[Magentech](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/magentech/zip/price-range--magentech.ocmod.zip) theme addon.
+[Out-Of-Stock](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/out-of-stock/zip/price-range--out-of-stock.ocmod.zip]) addon for calculating the price range taking into account options that are not available.
 
 ## Related extensions
 [Equal Sign](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=34383) - allows to use the equal sign as a prefix.
