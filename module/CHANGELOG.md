@@ -1,5 +1,9 @@
 # Change log
 
+## [1.6.4] - 2023.02.20:
+### Fixed
+- Wrong names of the module events
+
 ## [1.6.3] - 2023.01.16:
 ### Fixed
 - Minor fixes
