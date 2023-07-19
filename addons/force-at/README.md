@@ -1,4 +1,4 @@
 # Price Range|Force At
 
 ## Description
-An addon to force display minimum price with related prefix for products with no options.
+Force display minimum price with related custom textual prefix (e.g. "At") for products with no options.
