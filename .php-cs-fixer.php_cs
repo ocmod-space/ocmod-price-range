@@ -338,4 +338,3 @@ return $config
 			->in(__DIR__)
 	)
 ;
-?>
