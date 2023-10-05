@@ -82,7 +82,7 @@ return $config
 		// PHP code MUST use only UTF-8 without BOM (remove BOM).
 		'encoding' => true,
 		// Escape implicit backslashes in strings and heredocs to ease the understanding of which are special chars interpreted by PHP and which not.
-		'escape_implicit_backslashes' => true,
+		'escape_implicit_backslashes' => false,
 		// Add curly braces to indirect variables to make them clear to understand. Requires PHP >= 7.0.
 		'explicit_indirect_variable' => true,
 		// Converts implicit variables into explicit ones in double-quoted strings or heredoc syntax.
