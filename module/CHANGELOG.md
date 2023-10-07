@@ -1,5 +1,11 @@
 # Change log
 
+## [1.7.0] - 2023.10.06:
+### Added
+- Availability to count out-of-stock options.
+### Internal
+- Code improvements.
+
 ## [1.6.5] - 2023.04.08:
 ### Internal
 - Code improvements.
