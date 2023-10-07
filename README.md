@@ -1,7 +1,7 @@
 # Price Range
 
 ## Description
-**Price Range** is a simple but powerful OpenCart extension that allows to display the minimum and maximum possible price of a product, based on the product option prices, discounts and specials.
+**Price Range** is a simple but powerful OpenCart extension that allows to display product price range based on minimum and maximum possible price of product and its options. Quantity based discounts taking into account also.
 [Read more...](./module/README.md)
 
 ## Links
