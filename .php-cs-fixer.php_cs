@@ -164,14 +164,14 @@ return $config
 		// Removes extra blank lines and/or blank lines following configuration.
 		'no_extra_blank_lines'                          => array(
 			'tokens' => array(
-				'break',
+				// 'break',
 				'case',
-				'continue',
+				// 'continue',
 				'curly_brace_block',
 				'default',
 				'extra',
 				'parenthesis_brace_block',
-				'return',
+				// 'return',
 				'square_brace_block',
 				'switch',
 				'throw',
