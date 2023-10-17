@@ -1,5 +1,19 @@
 # Change log
 
+## [2.0.0] - 2023.10.16:
+### Added
+- Force product price to appear as if it were minimum (e.g., `From $100`), even if the product has no options and no price range.
+- SQL caching.
+### Fixed
+- Problems with the calculations of the combination of the default prefixes `-` and `+` with the prefix `=`.
+### Internal
+- Core functions was rewrited from the scratch to better compatibility and fix *childhood diseases*.
+- Option *quality* validation - a nonsensical jumble of prefixes will not be calculated. This refers to the aforementioned combination of standard prefixes with the equality prefix in one option.
+
+## [1.7.1] - 2023.10.10:
+### Internal
+- Minor code changes to improve compatibility.
+
 ## [1.7.0] - 2023.10.06:
 ### Added
 - Availability to count out-of-stock options.
