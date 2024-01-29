@@ -1,5 +1,17 @@
 # Change log
 
+## [2.1.0] - 2024.01.29:
+### Changed
+- Admin internals.
+### Fixed
+- Cache system.
+### Removed
+- OpenCart 2.x support.
+
+## [2.0.1] - 2023.12.08:
+### Fixed
+- Cache issue.
+
 ## [2.0.0] - 2023.10.16:
 ### Added
 - Force product price to appear as if it were minimum (e.g., `From $100`), even if the product has no options and no price range.
