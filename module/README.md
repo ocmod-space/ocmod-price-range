@@ -1,8 +1,8 @@
 # Price Range
 
 ## Description
-**Price Range** is a simple but powerful OpenCart extension that allows to display product price range based on minimum and maximum possible price of product and its options. Quantity based discounts taking into account also.
-Compatible with OpenCart versions 2.2.x-3.x.
+**Price Range** is a simple but powerful OpenCart extension that allows to display product price range based on minimum and maximum possible price of product and its options. Quantity based discounts taking into account also.  
+Compatible with OC 2x(2.2.0.x)-3x versions.
 
 ## Features
 * Three ways to display product prices:
@@ -20,12 +20,6 @@ Compatible with OpenCart versions 2.2.x-3.x.
 ## Links
 * **Price Range** on [**OpenCart Marketplace**](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=38331).
 * [**Price Range**](https://www.ocmod.space/price-range) web page.
-
-## Addons
-* [Journal 3](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/journal3/zip/price-range--journal3.ocmod.zip) theme addon.
-* [Journal 2](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/journal2/zip/price-range--journal2.ocmod.zip) theme addon.
-* [Magentech](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/magentech/zip/price-range--magentech.ocmod.zip) theme addon.
-* [Force *At*](https://github.com/ocmod-space/ocmod-price-range/raw/main/addons/force-at/zip/price-range--force-at.ocmod.zip)- force display minimum price with related custom textual prefix (e.g. *At*) for products with no options.
 
 ## Related extensions
 * The [**Enhanced Options**](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=40391) module allows to apply product special offers and discounts to their options, as well as to define one-time paid options, the prices of which do not depend on the quantity of the selected product.
