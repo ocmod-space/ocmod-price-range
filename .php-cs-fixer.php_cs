@@ -28,7 +28,7 @@ return $config
 		'binary_operator_spaces'                        => [
 			'default'   => 'single_space',
 			'operators' => [
-				'=>' => 'at_least_single_space',
+				'=>' => 'align_single_space_minimal_by_scope',
 				'='  => 'at_least_single_space',
 			],
 		],
@@ -202,9 +202,7 @@ return $config
 		'single_class_element_per_statement'            => true,
 		'single_import_per_statement'                   => true,
 		'single_line_after_imports'                     => true,
-		'single_line_comment_style'                     => [],
 		'single_line_throw'                             => true,
-
 		'single_quote'                                  => false,
 		'single_space_after_construct'                  => true,
 		'single_trait_insert_per_statement'             => true,
