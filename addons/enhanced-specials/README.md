@@ -1,4 +1,4 @@
-# Price Range|Journal3
+# Price Range|Enhanced Specials
 
 ## Description
-Compatibility with the **Journal 3** theme.
+An addon to improve compatibility with the subject module/theme.

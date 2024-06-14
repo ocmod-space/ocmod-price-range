@@ -1,4 +1,4 @@
-# OCTemplates|Journal3
+# Price Range|OCTemplates
 
 ## Description
-Compatibility with the **OCTemplates** themes.
+An addon to improve compatibility with the subject module/theme.

@@ -1,4 +1,4 @@
 # Price Range|Custom Unit
 
 ## Description
-Compatibility with the [**Custom Unit**](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=10463) module.
+An addon to improve compatibility with the subject module/theme - [**Custom Unit**](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=10463).

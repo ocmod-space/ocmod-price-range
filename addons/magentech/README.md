@@ -1,4 +1,4 @@
 # Price Range|Magentech
 
 ## Description
-Compatibility with the [**magentech**](https://themeforest.net/user/magentech) themes.
+An addon to improve compatibility with the subject module/theme - [**magentech**](https://themeforest.net/user/magentech).
