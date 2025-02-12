@@ -1,5 +1,15 @@
 # Change log
 
+## [2.1.2] - 2025.02.11:
+### Added
+- OC 4.x compatibility.
+### Internal
+- Minor code changes and improvements.
+
+## [2.1.1] - 2024.10.09:
+### Removed
+- Internal RTL support (since `dir="rtl"` is enough).
+
 ## [2.1.0] - 2024.01.29:
 ### Changed
 - Admin internals.

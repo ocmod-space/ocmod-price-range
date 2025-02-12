@@ -5,21 +5,22 @@ REMEMBER! YOU ARE FULLY RESPONSIBLE FOR ANY DAMAGE TO YOUR STORE FILES OR LOSS O
 
 ## Install
 * Extensions → Installer → [Upload]: `price_range.ocmod.zip`
+* {4x} Extensions → Installer → /ocmod.space/price_range → [Install]
 * Extensions → Modifications → [Refresh]
-* Dashboard → [Developer Settings] → [Refresh]
+* {3x} Dashboard → [Developer Settings] → [Refresh]
+* {4x} Dashboard → [Developer Settings] → Cache → [Refresh]
+* {4x} Dashboard → [Developer Settings] → Theme → [Refresh]
 * Extensions → Extensions → Modules → /ocmod.space/price_range → [Install]
 
 ## Uninstall
 * Extensions → Extensions → Modules → /ocmod.space/price_range → [Uninstall]
-* Extensions → Installer → Install History → `price_range.ocmod.zip` → [Uninstall]
+* {3x} Extensions → Installer → Install History → `price_range.ocmod.zip` → [Uninstall]
+* {4x} Extensions → Installer → /ocmod.space/price_range → [Uninstall]
+* {4x} Extensions → Installer → /ocmod.space/price_range → [Delete]
 * Extensions → Modifications → [Refresh]
-* Dashboard → [Developer Settings] → [Refresh]
+* {3x} Dashboard → [Developer Settings] → [Refresh]
+* {4x} Dashboard → [Developer Settings] → Cache → [Refresh]
+* {4x} Dashboard → [Developer Settings] → Theme → [Refresh]
 
-## Update
-* Extensions → Installer → Install History → `price_range.ocmod.zip` → [Uninstall]
-* Extensions → Installer → [Upload]: `price_range.ocmod.zip`
-* Extensions → Modifications → [Refresh]
-* Dashboard → [Developer Settings] → [Refresh]
-* Extensions → Extensions → Modules → /ocmod.space/price_range → [Install] → [Edit] → [Save]
-
-
+## Configure
+* Extensions → Extensions → Modules → /ocmod.space/price_range → [Edit]
