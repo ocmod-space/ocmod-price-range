@@ -3,7 +3,9 @@
 ## Description
 The **Price Range** OpenCart module enables the calculation and display of product price ranges based on the minimum and maximum possible prices of a product and its options. It also takes quantity-based discounts into account.
 
-Compatible with OpenCart 2.3.x (PHP 5.x) and 3.x-4.x (PHP ≥ 7.x.).
+Compatible with OpenCart 2.3.x (PHP 5.6) and 3.x/4.x (PHP ≥ 7.x).
+
+Note: The source code is encrypted. For purchase and licensing information, see the OpenCart Marketplace link in the **Download** section.
 
 ## Features
 * Three ways to display product prices:
@@ -11,8 +13,8 @@ Compatible with OpenCart 2.3.x (PHP 5.x) and 3.x-4.x (PHP ≥ 7.x.).
     - Starting from the minimum price, e.g., `From $100`.
     - Up to the maximum price, e.g., `Up to $150`.
 * Customizable multilingual labels for minimum and maximum prices (e.g., `From`, `Up to`, etc.).
-* Fully compatible with the Journal theme.
-* No core file modifications – utilizes the OC Event System only.
+* No core file modifications.
+* Seamless compatibility with the **Journal** theme.
 
 ## Restrictions
 This module does not work and is not supported for stores using the following domain extensions: `.ru`,`.рф`,`.рус`,`.by`,`.бел`,`.su`.
