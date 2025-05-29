@@ -13,7 +13,7 @@ Note: The source code is encrypted. For purchase and licensing information, see 
     - Starting from the minimum price, e.g., `From $100`.
     - Up to the maximum price, e.g., `Up to $150`.
 * Customizable multilingual labels for minimum and maximum prices (e.g., `From`, `Up to`, etc.).
-* No core file modifications.
+* No core file modifications (OCMOD).
 * Seamless compatibility with the **Journal** theme.
 
 ## Restrictions
