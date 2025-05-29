@@ -1,5 +1,9 @@
 # Change log
 
+## [2.2.0] - 2025.05.29:
+### Refactored
+- Replaced custom SQL query with OpenCart standard method for improved compatibility with extensions that override core behavior.
+
 ## [2.1.2] - 2025.02.11:
 ### Added
 - OC 4.x compatibility.
