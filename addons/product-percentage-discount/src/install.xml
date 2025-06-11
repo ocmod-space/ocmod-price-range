@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+### docblock.txt ###
+-->
+
+<modification>
+	<name>VAR(FULL_NAME)</name>
+	<code>VAR(CODE)</code>
+	<version>VAR(VERSION)</version>
+	<author>VAR(AUTHOR)</author>
+	<link>VAR(XMLLINK)</link>
+
+	<file path="catalog/controller/extension/module/price_range.php" error="log">
+		<operation error="log">
+			<search info="">
+				<![CDATA[$discounts[$discount['quantity']] = []]>
+			</search>
+			<add position="before">
+				<![CDATA[					/// <<< VAR(FULL_NAME)
+					if(isset($discount['type']) && $discount['type'] == 'percent'){
+						$discount['price'] = $product_info['price'] - $discount['price'] * $product_info['price'] / 100;
+					}
+					/// >>> VAR(FULL_NAME)]]>
+			</add>
+		</operation>
+	</file>
+</modification>
