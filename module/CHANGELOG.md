@@ -1,5 +1,9 @@
 # Change log
 
+## [2.2.1] - 2025.06.02:
+### Refactored
+- Minor code optimization.
+
 ## [2.2.0] - 2025.05.29:
 ### Refactored
 - Replaced custom SQL query with OpenCart standard method for improved compatibility with extensions that override core behavior.
